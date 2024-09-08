@@ -18,6 +18,7 @@ class AddProduct {
         'image': image,
       },
     );
+    return ProductModels.fromJson(data);
 
     // Add product to database
   }
