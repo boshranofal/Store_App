@@ -6,11 +6,15 @@ class GetAllProduct {
     List<dynamic> data =
         await Api().get(url: 'https://fakestoreapi.com/products');
 
-    List<ProductModels> product = [];
+    List<ProductModels> products = [];
     for (int i = 0; i < data.length; i++) {
-      ProductModels products = ProductModels.fromJson(data[i]);
-      product.add(products);
+      products.add(
+        ProductModels.fromJson(
+          data[i],
+        ),
+      );
     }
-    return product;
+
+    return products;
   }
 }
